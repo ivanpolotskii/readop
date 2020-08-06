@@ -1,11 +1,36 @@
 window.onload = function () {
 
-	var scr = $(".scroll");
+	let scr = $(".scroll");
+	let switc = document.querySelector('.tgSwitch');
+	let slider = document.querySelector('.slider');
 	let scroll = document.querySelector('.scroll');
 	let previous = document.querySelector('.previous');
 	let next = document.querySelector('.next');
 	let manga = document.querySelector('.manga');
-	let chapter = document.querySelector('.main h1')
+	let chapter = document.querySelector('.main h1');
+	let main = document.querySelector('.main');
+
+	if(localStorage.getItem('light')===null){
+		localStorage.setItem('light',true);
+	}else if(localStorage.getItem('light')==='true'){
+		switc.classList.add('active');
+		slider.classList.add('active');
+		document.body.classList.add('active');
+		main.classList.add('active')
+	}
+	switc.addEventListener('click', function () {
+		switc.classList.toggle('active');
+		slider.classList.toggle('active');
+		document.body.classList.toggle('active');
+		main.classList.toggle('active')
+		console.log(localStorage.getItem('light'))
+		if(localStorage.getItem('light') == 'true'){
+			localStorage.setItem('light', false)
+		}else {
+			localStorage.setItem('light', true);
+		}
+	})
+
 	scr.mousedown(function () {
 		var startX = this.scrollLeft + event.pageX;
 		var startY = this.scrollTop + event.pageY;
@@ -54,10 +79,13 @@ window.onload = function () {
 		updateChapter(ch);
 	})
 	previous.addEventListener('click', function (e) {
-		ch = +localStorage.getItem('ch') - 1;
-		previous.innerHTML = `previous ${ch - 1} chapter`
-		next.innerHTML = `next ${ch + 1} chapter`
-		updateChapter(ch);
+		if(ch>1){
+			ch = +localStorage.getItem('ch') - 1;
+			previous.innerHTML = `previous ${ch - 1} chapter`
+			next.innerHTML = `next ${ch + 1} chapter`
+			updateChapter(ch);
+		}
+
 	})
 	updateChapter(ch)
 
