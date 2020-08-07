@@ -21,15 +21,18 @@ body {
 }
 
 .header {
-	width: 100%;
-	background: #064CDB;
-	min-height: 100px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: white;
+	min-height: 100px;
+	background: blue;
 	font-size: 40px;
-	font-family: Arial;
+	color: white;
+	box-shadow: 1px 1px 10px 0px black;
+	font-weight: 700;
+	width: 100%;
 }
 
 .buttons {
@@ -45,6 +48,7 @@ body {
 	align-items: center;
 	width: 70%;
 	color: white;
+	
 }
 
 .chapter {
@@ -80,6 +84,7 @@ img {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 0 10px;
 }
 
 .tgSwitch {

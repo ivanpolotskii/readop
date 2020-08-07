@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-	<title>Read OP</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="null.css">
-	<script src="./main.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/null.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/main.js" defer></script>
+	<title>Read One piece manga</title>
 </head>
 
 <body>
-
-	<div class="scroll">
-		<div class="header">
-			READ ONE PIECE MANGA ONLINE
-		</div>
-		<p>light:</p>
-		<div class="tgSwitch">
-			<div class="slider"></div>
-			<input type="checkbox" class='checkbox'>
-		</div>
-		<div class="main">
-			<h1 class="chapter"></h1>
-			<div class="buttons">
-				<div class="previous">previous ch</div>
-				<div class="next">next ch</div>
+	<div class="header" onclick="document.location.href = './index.html'">
+		READ ONE PIECE MANGA ONLINE
+	</div>
+	<div class="main">
+		<div class="continue">
+			<h1>Continue reading</h1>
+			<div class="manga__wrapper" onclick="document.location.href = './onepiece.html'">
+				<img src="./img/manga.jpg" alt="">
+				<div class="manga__wrapper__description">
+					<p class="chapter-number"></p>
+				</div>
 			</div>
 		</div>
-		<div class="manga">
-
+		<div class="last">
+			<h1>Last Feautures</h1>
+			
 		</div>
 	</div>
+
 </body>
 
 </html>
