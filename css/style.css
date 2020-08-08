@@ -31,11 +31,10 @@ body {
 	align-items: center;
 	justify-content: center;
 	min-height: 100px;
-	background: blue;
-	font-size: 40px;
+	background: #064CDB;
+	font-size: 30px;
 	color: white;
 	box-shadow: 1px 1px 10px 0px black;
-	font-weight: 700;
 	width: 100%;
 }
 
