@@ -40,6 +40,11 @@ body {
 	justify-content: space-between;
 
 }
+.buttons1{
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+}
 
 .main {
 	display: flex;
@@ -63,6 +68,9 @@ img {
 
 .next,
 .previous {
+	border-radius: 20px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 30px;
 	max-width: 100%;
 	cursor: pointer;
 	height: 50px;
@@ -73,11 +81,13 @@ img {
 	justify-content: center;
 	padding: 0 5px;
 	border: 1px solid #000;
+	transition: 300ms;
 }
 
 .next:hover,
 .previous:hover {
-	background-color: rgb(189, 189, 189);
+	background-color: black;
+	color: white;
 }
 
 .manga {

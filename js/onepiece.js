@@ -4,8 +4,10 @@ window.onload = function () {
 	let switc = document.querySelector('.tgSwitch');
 	let slider = document.querySelector('.slider');
 	let scroll = document.querySelector('.scroll');
-	let previous = document.querySelector('.previous');
-	let next = document.querySelector('.next');
+	let previous = document.querySelectorAll('.previous')[0];
+	let previous1 = document.querySelectorAll('.previous')[1];
+	let next = document.querySelectorAll('.next')[0];
+	let next1 = document.querySelectorAll('.next')[1];
 	let manga = document.querySelector('.manga');
 	let chapter = document.querySelector('.main h1');
 	let main = document.querySelector('.main');
@@ -54,15 +56,16 @@ window.onload = function () {
 			ch = '0'.repeat(4 - (ch + '').length) + ch;
 			let img = document.createElement('img');
 			img.src = `./img/${ch}-003.png`
-			
+
 			previous.style.visibility = 'visible';
 			manga.insertAdjacentHTML('beforeend', `<img src="./img/${ch}-${promVal}.png" alt="" class="tocheck" onerror="">`);
 
 		}
 	}
 	let obj = {
-		oen:'two'
+		oen: 'two'
 	}
+
 	function updateChapter(ch) {
 		manga.innerHTML = '';
 		localStorage.setItem('ch', ch);
@@ -76,7 +79,7 @@ window.onload = function () {
 	}
 	let ch;
 
-	
+
 	if (localStorage.getItem('ch') == null) {
 		ch = 1;
 		localStorage.setItem('ch', 1);
@@ -85,24 +88,52 @@ window.onload = function () {
 	}
 
 
-	chapter.innerHTML = `One piece chapter ${localStorage.getItem('ch')}`
-	next.innerHTML = `next ${+localStorage.getItem('ch') + 1} chapter`
-	previous.innerHTML = `previous ${+localStorage.getItem('ch') - 1} chapter`
+	chapter.innerHTML = `One piece chapter ${localStorage.getItem('ch')}`;
+	next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+	next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+	previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+	previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
 
 	checkChapter(ch)
 
 	next.addEventListener('click', function (e) {
 		ch = +localStorage.getItem('ch') + 1;
-		next.innerHTML = `next ${ch+1} chapter`
-		previous.innerHTML = `previous ${ch - 1} chapter`
+		next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+		next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+		previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+		previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+		checkChapter(ch)
+		updateChapter(ch);
+	})
+	next1.addEventListener('click', function (e) {
+		ch = +localStorage.getItem('ch') + 1;
+		next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+		next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+		previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+		previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
 		checkChapter(ch)
 		updateChapter(ch);
 	})
 	previous.addEventListener('click', function (e) {
 		if (ch > 1) {
 			ch = +localStorage.getItem('ch') - 1;
-			previous.innerHTML = `previous ${ch - 1} chapter`
-			next.innerHTML = `next ${ch + 1} chapter`
+			next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+			next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+			previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+			previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+			checkChapter(ch)
+
+			updateChapter(ch);
+		}
+
+	})
+	previous1.addEventListener('click', function (e) {
+		if (ch > 1) {
+			ch = +localStorage.getItem('ch') - 1;
+			next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+			next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+			previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+			previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
 			checkChapter(ch)
 
 			updateChapter(ch);
