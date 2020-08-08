@@ -63,3 +63,41 @@ body {
 .continue{
 	margin-bottom: 40px;
 }
+
+@media(max-width:700px) {
+	.header {
+		font-size: 30px !important;
+	}
+}
+
+@media(max-width:500px){
+	.manga__wrapper>img {
+		width: 250px;
+	}
+	h1{
+		font-size: 25px !important;
+	}
+	.manga__wrapper {
+		width: 250px;
+		height: 320px;
+		box-shadow: 1px 1px 1px -1px rgb(0, 0, 0);
+		font-size: 20px;
+		font-family: Arial;
+		font-weight: 700;
+		background: white;
+	}
+
+	.manga__wrapper__description {
+		height: 70px;
+		display: flex;
+		justify-content: flex-start;
+		padding: 0 5px;
+		color: rgba(0, 0, 0, 0.678);
+		align-items: center;
+	}
+	.header {
+		text-align: center;
+		font-size: 25px !important;
+	}
+
+}
