@@ -97,6 +97,7 @@ window.onload = function () {
 	checkChapter(ch)
 
 	next.addEventListener('click', function (e) {
+		document.location.href = '#top';
 		ch = +localStorage.getItem('ch') + 1;
 		next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
 		next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
@@ -106,6 +107,7 @@ window.onload = function () {
 		updateChapter(ch);
 	})
 	next1.addEventListener('click', function (e) {
+		document.location.href = '#top';
 		ch = +localStorage.getItem('ch') + 1;
 		next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
 		next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
@@ -115,6 +117,8 @@ window.onload = function () {
 		updateChapter(ch);
 	})
 	previous.addEventListener('click', function (e) {
+		document.location.href = '#top';
+		
 		if (ch > 1) {
 			ch = +localStorage.getItem('ch') - 1;
 			next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
@@ -128,6 +132,8 @@ window.onload = function () {
 
 	})
 	previous1.addEventListener('click', function (e) {
+		document.location.href = '#top';
+
 		if (ch > 1) {
 			ch = +localStorage.getItem('ch') - 1;
 			next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
