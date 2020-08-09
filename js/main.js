@@ -7,8 +7,8 @@ if (localStorage.getItem('ch')) {
 	chapterNumber.textContent = 'Start with first chapter';
 }
 // Add chapters
-let count = 43;
-let chaptersContainer = document.querySelector('.last')
+let count = 201;
+let chaptersContainer = document.querySelector('.last__chapters')
 while (count-- > 1) {
 	chaptersContainer.insertAdjacentHTML('beforeend', `
 		<div class = "chapter-item" id = "${count}" onclick = "localStorage.setItem('ch',this.id+'');document.location.href='./onepiece.html'">

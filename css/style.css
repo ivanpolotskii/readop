@@ -183,7 +183,11 @@ body {
 	color: white;
 	background-color: red;
 }
-
+.last__chapters{
+	overflow: auto;
+	width: 800px;
+	height: 500px;
+}
 
 @media(max-width:800px) {
 	.bookmarks {
