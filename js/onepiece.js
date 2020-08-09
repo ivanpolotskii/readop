@@ -10,6 +10,7 @@ let manga = document.querySelector('.manga');
 let chapter = document.querySelector('.main h1');
 let main = document.querySelector('.main');
 
+
 if (localStorage.getItem('light') === null) {
 	localStorage.setItem('light', true);
 } else if (localStorage.getItem('light') === 'true') {
@@ -72,7 +73,7 @@ function updateChapter(ch) {
 	for (let i = 1; i < 50; i++) {
 		promVal = '0'.repeat(3 - (i + '').length) + i;
 		console.log(promVal)
-		manga.insertAdjacentHTML('beforeend', `<img src="./img/${ch}-${promVal}.png" alt="" class="imag" onerror="this.style.display='none';">`);
+		manga.insertAdjacentHTML('beforeend', `<img src="./img/${ch}-${promVal}.png" alt="" class="imag" onerror="this.style.display='none';"> <a name='${i}'></a>`);
 	}
 }
 let ch;
@@ -160,3 +161,13 @@ window.addEventListener('keydown', function (e) {
 	}
 })
 updateChapter(ch)
+// Safe scrolling
+
+let pages = [...document.querySelectorAll('.imag')];
+document.location.href = `#${localStorage.getItem('page')}`
+scroll.addEventListener('scroll',function(e){
+	console.log(Math.round(-pages[0].getBoundingClientRect().top/(1500)))
+	localStorage.setItem('page', Math.round(-pages[0].getBoundingClientRect().top / 1500))
+})
+
+
