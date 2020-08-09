@@ -7,7 +7,7 @@ if (localStorage.getItem('ch')) {
 	chapterNumber.textContent = 'Start with first chapter';
 }
 // Add chapters
-let count = 21;
+let count = 43;
 let chaptersContainer = document.querySelector('.last')
 while (count-- > 1) {
 	chaptersContainer.insertAdjacentHTML('beforeend', `
@@ -18,4 +18,25 @@ while (count-- > 1) {
 			</div>
 		</div>
 	`)
+}
+
+// Bookmarks
+let bookmarks = document.querySelector('.bookmarks');
+let marks = JSON.parse(localStorage.getItem('marks'));
+function removeBookmark(){
+
+}
+if(marks!=[]){
+	marks.forEach((el)=>{
+		bookmarks.insertAdjacentHTML('beforeend', `
+		<div class = "chapter-item" id = "${el}" onclick = "localStorage.setItem('ch',this.id+'');document.location.href='./onepiece.html'">
+			<div class = "description"> One Piece Chapter ${el}</div>
+			<div class = "buttons">
+				<a href = "./onepiece.html">READ</a>
+				<a class="remove" href="" onclick="let marks=JSON.parse(localStorage.getItem('marks'));marks.splice(marks.indexOf(${el}),1);localStorage.setItem('marks',JSON.stringify(marks));">REMOVE</a>
+			</div>
+		</div>
+	`)
+	})
+	
 }

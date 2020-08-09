@@ -19,7 +19,10 @@ body {
 .imag {
 	margin: 15px 0;
 }
-
+.header-wrapper{
+	width: 100%;
+	min-height: 100px;
+}
 .header {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	cursor: pointer;
@@ -40,7 +43,8 @@ body {
 	justify-content: space-between;
 
 }
-.buttons1{
+
+.buttons1 {
 	width: 70%;
 	display: flex;
 	justify-content: space-between;
@@ -52,7 +56,7 @@ body {
 	align-items: center;
 	width: 70%;
 	color: white;
-	
+
 }
 
 .chapter {
@@ -105,16 +109,17 @@ img {
 	background: #d8d9db;
 	border-radius: 15px;
 	transition: 400ms;
-
 }
 
-.slider{
+.slider {
 	transition: 400ms;
 
 }
-.slider.active{
+
+.slider.active {
 	transform: translateX(41px);
 }
+
 .tgSwitch.active {
 	background: #4bd865;
 }
@@ -129,14 +134,59 @@ img {
 .tgSwitch>input {
 	display: none;
 }
-body.active{
-	background: #E2E8F0;
-	color: black;
-}
-.main.active{
-	color: black;
-}
-.manga a{
+
+.switcher {
 	color: white;
 }
 
+.switcher.active {
+	color: black;
+}
+
+body.active {
+	background: #E2E8F0;
+	color: black;
+}
+
+.main.active {
+	color: black;
+}
+
+.manga a {
+	color: white;
+}
+
+.switcher {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.sw-bookmark {
+	margin-top: 5px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.bookmark {
+	cursor: pointer;
+	font-size: 50px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.bookmark>i {
+	margin-right: 100%;
+	color: white;
+	transition: 300ms;
+}
+
+.bookmark i.active {
+	color: black;
+}
+.bookmark i.added {
+	color: red;
+}
