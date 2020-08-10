@@ -102,7 +102,7 @@ let obj = {
 function updateChapter(ch) {
 	if (localStorage.getItem('marks') != null) {
 		bookmark.classList.remove('added');
-		if (JSON.parse(localStorage.getItem('marks')).includes(ch)){
+		if (JSON.parse(localStorage.getItem('marks')).includes(ch)) {
 			bookmark.classList.add('added');
 		}
 	}
@@ -133,24 +133,28 @@ previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch -
 previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
 checkChapter(ch)
 next.addEventListener('click', function (e) {
-	document.location.href = '#top';
-	ch = +localStorage.getItem('ch') + 1;
-	next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
-	next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
-	previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
-	previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
-	checkChapter(ch)
-	updateChapter(ch);
+	if (ch < 404) {
+		document.location.href = '#top';
+		ch = +localStorage.getItem('ch') + 1;
+		next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+		next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+		previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+		previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+		checkChapter(ch)
+		updateChapter(ch);
+	}
 })
 next1.addEventListener('click', function (e) {
-	document.location.href = '#top';
-	ch = +localStorage.getItem('ch') + 1;
-	next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
-	next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
-	previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
-	previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
-	checkChapter(ch)
-	updateChapter(ch);
+	if (ch < 404) {
+		document.location.href = '#top';
+		ch = +localStorage.getItem('ch') + 1;
+		next.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+		next1.innerHTML = `${ch+1}   chapter <i class="fa fa-arrow-right" aria-hidden="true"></i>`
+		previous.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+		previous1.innerHTML = `<i class="fa fa-arrow-left" aria-hidden="true"></i> ${ch - 1} chapter`
+		checkChapter(ch)
+		updateChapter(ch);
+	}
 })
 previous.addEventListener('click', function (e) {
 	document.location.href = '#top';

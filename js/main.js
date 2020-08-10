@@ -7,7 +7,7 @@ if (localStorage.getItem('ch')) {
 	chapterNumber.textContent = 'Start with first chapter';
 }
 // Add chapters
-let count = 201;
+let count = 405;
 let chaptersContainer = document.querySelector('.last__chapters')
 while (count-- > 1) {
 	chaptersContainer.insertAdjacentHTML('beforeend', `
